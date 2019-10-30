@@ -4,10 +4,15 @@
  This is a Visual Studio (C++) Solution Template intended to save some time when developing custom payloads/shellcode. This solution creates 3 projects:
 
  1. A static library project (Core)
+
     All of your payload code goes in this project in the runme() function. Add as many headers/cpp files/references as you like, but runme() will be your entry point.
+
  2. A dynamic library project (DLL)
+
     This project simply wraps the functionality of the static library project into a DLL skeleton. Once built, this project can be run directly using rundll32 or it can be converted to PIC shellcode using something like ConvertTo-Shellcode.ps1 from Nick Landers avaialble here: https://github.com/monoxgas/sRDI/tree/master/PowerShell
+
  3. An application project (EXE)
+ 
     This project simply wraps the static library in an executable. This project can be used to debug your payload from the Visual Studio debugger and allows you to set breakpoints in the static library code.
 
 ## Use Cases
