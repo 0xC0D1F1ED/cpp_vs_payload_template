@@ -10,7 +10,7 @@
 #endif
 
 // Holds the global variables for our thread
-HANDLE hTBThread;
+HANDLE hProjThread;
 DWORD threadID;
 
 // Function executed when the thread starts
@@ -25,7 +25,7 @@ BOOL APIENTRY DllMain(HMODULE hModule, DWORD  ul_reason_for_call, LPVOID lpReser
 		return TRUE;
 
 	DisableThreadLibraryCalls(hModule);
-	hTBThread = CreateThread(NULL, 0, Start$ext_safeprojectname$, NULL, 0, &threadID);
+	hProjThread = CreateThread(NULL, 0, Start$ext_safeprojectname$, NULL, 0, &threadID);
 
 	return TRUE;
 }
@@ -33,8 +33,8 @@ BOOL APIENTRY DllMain(HMODULE hModule, DWORD  ul_reason_for_call, LPVOID lpReser
 // This is so the DLL can be started with rundll and will still function properly
 // It will wait for the thread to finish
 extern "C" __declspec(dllexport) BOOL Load(LPVOID lpUserdata, DWORD nUserdataLen) {
-	if (hTBThread) {
-		WaitForSingleObject(hTBThread, INFINITE);
+	if (hProjThread) {
+		WaitForSingleObject(hProjThread, INFINITE);
 	}
 
 	return TRUE;
