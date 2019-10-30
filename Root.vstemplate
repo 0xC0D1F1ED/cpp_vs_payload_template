@@ -1,0 +1,31 @@
+﻿<VSTemplate Version="3.0.0" Type="ProjectGroup" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+  <TemplateData>
+    <Name>CPP Core/EXE/DLL Solution Template</Name>
+    <Description>Template that includes projects for static library, exe, and dll</Description>
+    <ProjectType>VC</ProjectType>
+    <ProjectSubType>
+    </ProjectSubType>
+    <SortOrder>1000</SortOrder>
+    <CreateNewFolder>true</CreateNewFolder>
+    <DefaultName>NewSolution</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <LocationField>Enabled</LocationField>
+    <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+  </TemplateData>
+  <TemplateContent>
+    <ProjectCollection>
+      <ProjectTemplateLink ProjectName="$safeprojectname$Core" CopyParameters="true">
+        CoreProjectTemplate\MyTemplate.vstemplate
+      </ProjectTemplateLink>
+      <ProjectTemplateLink ProjectName="$safeprojectname$EXE" CopyParameters="true">
+        ExeProjectTemplate\MyTemplate.vstemplate
+      </ProjectTemplateLink>
+      <ProjectTemplateLink ProjectName="$safeprojectname$DLL" CopyParameters="true">
+        DLLProjectTemplate\MyTemplate.vstemplate
+      </ProjectTemplateLink>
+      <ProjectTemplateLink ProjectName="Libraries">Libraries\ignoreme.vstemplate</ProjectTemplateLink>
+      <ProjectTemplateLink ProjectName="Libraries\win32">Libraries\ignoreme.vstemplate</ProjectTemplateLink>
+      <ProjectTemplateLink ProjectName="Libraries\x64">Libraries\ignoreme.vstemplate</ProjectTemplateLink>
+    </ProjectCollection>
+  </TemplateContent>
+</VSTemplate>
