@@ -39,4 +39,4 @@
 
 ## Inspiration
 
- The inspiration for this template came from the way I saw Silent Break Securuity lay out one of their projects. I wanted a relatively painless way to replicate this layout without having to do all the manual work for each payload I write.
+ The inspiration for this template came from the way I saw Silent Break Security lay out one of their projects. I wanted a relatively painless way to replicate this layout without having to do all the manual work for each payload I write.
